@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A clean weather dashboard with a five-day forecast.">
+
+  <title> داشبورد آب‌وهوا</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <a href="#" class="logo">آب‌وهوا<span>.</span></a>
+      <span class="live-status">
+        <span class="status-dot"></span>
+        داشبورد وضعیت آب‌وهوا
+      </span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">آب‌وهوای روزانه شما</p>
+      <h1>یک پیش‌بینی مختصر<br><span>شفافیت بسیار</span></h1>
+      <p class="subtitle">
+        وضعیت آب‌وهوا را بررسی کنید و با اطمینان برای روز خود برنامه‌ریزی کنید.
+      </p>
+
+      <form id="searchForm" class="search-form">
+        <label for="cityInput" class="visually-hidden">نام شهر</label>
+        <input
+          id="cityInput"
+          type="text"
+          placeholder="Enter a city, e.g. Tehran"
+          value="Tehran"
+          required
+        >
+        <button type="submit">جستجو ↗</button>
+      </form>
+
+      <p id="status" class="status" aria-live="polite">
+        در حال بارگذاری وضعیت آب‌وهوا...
+      </p>
+    </section>
+
+    <section class="current-weather">
+      <div class="current-heading">
+        <div>
+          <p class="eyebrow">وضعیت فعلی آب‌وهوا</p>
+          <h2 id="cityName">Tehran</h2>
+          <p id="condition">در حال بارگذاری...</p>
+        </div>
+        <div id="weatherIcon" class="weather-icon">☀️</div>
+      </div>
+
+      <div class="temperature">
+        <span id="temperature">--</span>
+        <span id="unit">°C</span>
+      </div>
+
+      <p class="feels-like">
+        به نظر میرسد <strong id="feelsLike">--°C</strong>
+      </p>
+
+      <div class="weather-details">
+        <article class="detail">
+          <span>💧</span>
+          <p>رطوبت</p>
+          <strong id="humidity">--%</strong>
+        </article>
+
+        <article class="detail">
+          <span>↗</span>
+          <p>سرعت باد</p>
+          <strong id="wind">-- km/h</strong>
+        </article>
+
+        <article class="detail">
+          <span>🌡️</span>
+          <p>به نظر میرسد</p>
+          <strong id="feelsDetail">--°C</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="forecast-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">از قبل برنامه‌ریزی کنید</p>
+          <h2>پنج روز آینده</h2>
+        </div>
+
+        <button id="unitToggle" class="unit-button" type="button">
+          °C / °F
+        </button>
+      </div>
+
+      <div id="forecast" class="forecast">
+        <p class="status">پیش‌بینی شما در اینجا ظاهر خواهد شد.</p>
+      </div>
+    </section>
+
+    <footer>
+      <span>آب‌وهوا</span>
+      <span>
+        Weather data:
+        <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">
+          Open-Meteo
+        </a>
+      </span>
+    </footer>
+  </main>
+</body>
+</html>
